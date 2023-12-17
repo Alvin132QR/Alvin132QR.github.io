@@ -10,5 +10,5 @@ const wordList = [
   {
         word: "pinksheep",
         hint: "A Rare Pink Mob in Minecraft."
-  }
-]
+  },
+];
