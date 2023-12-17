@@ -153,11 +153,12 @@
             <span class="container-title">Download</span>
             <br >
             <br >
-            <button id="clickOnAds" onclick="enableDownloadAndRedirect()">Click on Ads</button>
-            <button id="testbutton" disabled onclick="troll()">Click Here</button>
-            <button id="testbutton" disabled onclick="loadgame()">Play Tic tac Toe</button>
-            <button id="testbutton" disabled onclick="loadweb()">plagiat GAme</button>
-            <button id="testbutton" disabled onclick="loadcar()">Play Car Game</button>
+            <button id="clickOnAds" onclick="enableDownloadAndRedirect()">Enable</button>
+            <button id="downloadBtn" disabled onclick="troll()">Click Here</button>
+            <button id="downloadBtn" disabled onclick="loadgame()">Play Tic tac Toe</button>
+            <button id="downloadBtn" disabled onclick="loadweb()">plagiat GAme</button>
+            <button id="downloadBtn" disabled onclick="loadcar()">Play Car Game</button>
+            <button id="downloadBtn" disabled onclick="hang()">Play Hangman Game</button>
         </div>
         
         <div class="help-panel" id="helpPanel">
@@ -188,26 +189,28 @@
     </div>
     <script>
         function enableDownloadAndRedirect() {
-          window.location.href = "https://doruffleton.com/4/6734198";
           enableDownload();
         }
         function enableDownload() {
             setTimeout(function() {
-                document.getElementById("testbutton").disabled = false;
+                document.getElementById("downloadBtn").disabled = false;
             }, 1000);
         }
         
         function loadgame() {
-            window.location.href = "alvinqid.github.io/game/game.html";
+            window.location.href = "alvin132qr.github.io/game/game.html";
+        }
+        function hang() {
+            window.location.href = "alvin132qr.github.io/game/hang.html";
         }
 
         function loadweb() {
-            window.location.href = "alvinqid.github.io";
+            window.location.href = "alvin132qr.github.io";
         }
 
 
         function loadcar() {
-            window.location.href = "alvinqid.github.io/cargame/car.html";
+            window.location.href = "alvin132qr.github.io/cargame/car.html";
         }
 
         function troll() {
