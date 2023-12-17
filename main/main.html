@@ -153,12 +153,11 @@
             <span class="container-title">Download</span>
             <br >
             <br >
-            <button id="clickOnAds" onclick="enableDownloadAndRedirect()">Enable</button>
-            <button id="downloadBtn" disabled onclick="troll()">Click Here</button>
-            <button id="downloadBtn" disabled onclick="loadgame()">Play Tic tac Toe</button>
-            <button id="downloadBtn" disabled onclick="loadweb()">plagiat GAme</button>
-            <button id="downloadBtn" disabled onclick="loadcar()">Play Car Game</button>
-            <button id="downloadBtn" disabled onclick="hang()">Play Hangman Game</button>
+            <button id="downloadBtn" onclick="troll()">Click Here</button>
+            <button id="downloadBtn" onclick="loadgame()">Play Tic tac Toe</button>
+            <button id="downloadBtn" onclick="loadweb()">plagiat GAme</button>
+            <button id="downloadBtn" onclick="loadcar()">Play Car Game</button>
+            <button id="downloadBtn" onclick="hang()">Play Hangman Game</button>
         </div>
         
         <div class="help-panel" id="helpPanel">
@@ -188,9 +187,6 @@
         </div>
     </div>
     <script>
-        function enableDownloadAndRedirect() {
-          enableDownload();
-        }
         function enableDownload() {
             setTimeout(function() {
                 document.getElementById("downloadBtn").disabled = false;
