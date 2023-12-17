@@ -1,108 +1,73 @@
-let btnRef = document.querySelectorAll(".button-option");
-let popupRef = document.querySelector(".popup");
-let newgameBtn = document.getElementById("new-game");
-let restartBtn = document.getElementById("restart");
-let msgRef = document.getElementById("message");
-//Winning Pattern Array
-let winningPattern = [
-  [0, 1, 2],
-  [0, 3, 6],
-  [2, 5, 8],
-  [6, 7, 8],
-  [3, 4, 5],
-  [1, 4, 7],
-  [0, 4, 8],
-  [2, 4, 6],
-];
-//Player 'X' plays first
-let xTurn = true;
-let count = 0;
+const wordDisplay = document.querySelector(".word-display");
+const guessesText = document.querySelector(".guesses-text b");
+const keyboardDiv = document.querySelector(".keyboard");
+const hangmanImage = document.querySelector(".hangman-box img");
+const gameModal = document.querySelector(".game-modal");
+const playAgainBtn = gameModal.querySelector("button");
 
-//Disable All Buttons
-const disableButtons = () => {
-  btnRef.forEach((element) => (element.disabled = true));
-  //enable popup
-  popupRef.classList.remove("hide");
-};
+// Initializing game variables
+let currentWord, correctLetters, wrongGuessCount;
+const maxGuesses = 6;
 
-//Enable all buttons (For New Game and Restart)
-const enableButtons = () => {
-  btnRef.forEach((element) => {
-    element.innerText = "";
-    element.disabled = false;
-  });
-  //disable popup
-  popupRef.classList.add("hide");
-};
+const resetGame = () => {
+    // Ressetting game variables and UI elements
+    correctLetters = [];
+    wrongGuessCount = 0;
+    hangmanImage.src = "images/hangman-0.svg";
+    guessesText.innerText = `${wrongGuessCount} / ${maxGuesses}`;
+    wordDisplay.innerHTML = currentWord.split("").map(() => `<li class="letter"></li>`).join("");
+    keyboardDiv.querySelectorAll("button").forEach(btn => btn.disabled = false);
+    gameModal.classList.remove("show");
+}
 
-//This function is executed when a player wins
-const winFunction = (letter) => {
-  disableButtons();
-  if (letter == "X") {
-    msgRef.innerHTML = "&#x1F389; <br> 'X' Wins";
-  } else {
-    msgRef.innerHTML = "&#x1F389; <br> 'O' Wins";
-  }
-};
+const getRandomWord = () => {
+    // Selecting a random word and hint from the wordList
+    const { word, hint } = wordList[Math.floor(Math.random() * wordList.length)];
+    currentWord = word; // Making currentWord as random word
+    document.querySelector(".hint-text b").innerText = hint;
+    resetGame();
+}
 
-//Function for draw
-const drawFunction = () => {
-  disableButtons();
-  msgRef.innerHTML = "&#x1F60E; <br> It's a Draw";
-};
+const gameOver = (isVictory) => {
+    // After game complete.. showing modal with relevant details
+    const modalText = isVictory ? `You found the word:` : 'The correct word was:';
+    gameModal.querySelector("img").src = `${isVictory ? 'victory' : 'lost'}.gif`;
+    gameModal.querySelector("h4").innerText = isVictory ? 'Congrats!' : 'Game Over!';
+    gameModal.querySelector("p").innerHTML = `${modalText} <b>${currentWord}</b>`;
+    gameModal.classList.add("show");
+}
 
-//New Game
-newgameBtn.addEventListener("click", () => {
-  count = 0;
-  enableButtons();
-});
-restartBtn.addEventListener("click", () => {
-  count = 0;
-  enableButtons();
-});
-
-//Win Logic
-const winChecker = () => {
-  //Loop through all win patterns
-  for (let i of winningPattern) {
-    let [element1, element2, element3] = [
-      btnRef[i[0]].innerText,
-      btnRef[i[1]].innerText,
-      btnRef[i[2]].innerText,
-    ];
-    //Check if elements are filled
-    //If 3 empty elements are same and would give win as would
-    if (element1 != "" && (element2 != "") & (element3 != "")) {
-      if (element1 == element2 && element2 == element3) {
-        //If all 3 buttons have same values then pass the value to winFunction
-        winFunction(element1);
-      }
-    }
-  }
-};
-
-//Display X/O on click
-btnRef.forEach((element) => {
-  element.addEventListener("click", () => {
-    if (xTurn) {
-      xTurn = false;
-      //Display X
-      element.innerText = "X";
-      element.disabled = true;
+const initGame = (button, clickedLetter) => {
+    // Checking if clickedLetter is exist on the currentWord
+    if(currentWord.includes(clickedLetter)) {
+        // Showing all correct letters on the word display
+        [...currentWord].forEach((letter, index) => {
+            if(letter === clickedLetter) {
+                correctLetters.push(letter);
+                wordDisplay.querySelectorAll("li")[index].innerText = letter;
+                wordDisplay.querySelectorAll("li")[index].classList.add("guessed");
+            }
+        });
     } else {
-      xTurn = true;
-      //Display Y
-      element.innerText = "O";
-      element.disabled = true;
+        // If clicked letter doesn't exist then update the wrongGuessCount and hangman image
+        wrongGuessCount++;
+        hangmanImage.src = `hangman-${wrongGuessCount}.svg`;
     }
-    //Increment count on each click
-    count += 1;
-    if (count == 9) {
-      drawFunction();
-    }
-    //Check for win on every click
-    winChecker();
-  });
-});
-//Enable Buttons and disable popup on page load
-window.onload = enableButtons;
+    button.disabled = true; // Disabling the clicked button so user can't click again
+    guessesText.innerText = `${wrongGuessCount} / ${maxGuesses}`;
+
+    // Calling gameOver function if any of these condition meets
+    if(wrongGuessCount === maxGuesses) return gameOver(false);
+    if(correctLetters.length === currentWord.length) return gameOver(true);
+}
+
+// Creating keyboard buttons and adding event listeners
+for (let i = 97; i <= 122; i++) {
+    const button = document.createElement("button");
+    button.innerText = String.fromCharCode(i);
+    keyboardDiv.appendChild(button);
+    button.addEventListener("click", (e) => initGame(e.target, String.fromCharCode(i)));
+}
+
+getRandomWord();
+playAgainBtn.addEventListener("click", getRandomWord);
