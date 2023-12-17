@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: white;
+            font-family: 'Nunito', sans-serif;
+            font-weight: bold;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+        }
+
+        .download-panel {
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            border: 1px solid black;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 10px;
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .AdvertisementZone {
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            border: 1px solid black;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 10px;
+            width: 250px;
+            min-height: 250px;
+            text-align: center;
+        }
+
+        #downloadBtn:disabled {
+            opacity: 0.5;
+        }
+        #downloadBtn:enabled {
+            background-color: lime;
+        }
+
+        #downloadBtn:enabled :hover {
+            background-color: lime;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        #clickOnAds, #downloadBtn {
+            font-family: 'Nunito', sans-serif;
+            font-weight: bold;
+            font-size: 12px;
+            background-color: white;
+            color: black;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+            border: 1px solid black;
+            margin: 5px;
+            padding: 15px;
+            width: 100%;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        #clickOnAds:hover {
+            background-color: #e0e0e0;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        #howToDownload {
+            font-size: 12px;
+            color: black;
+            cursor: pointer;
+            margin-top: 10px;
+            text-decoration: underline;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .help-panel {
+            font-size: 12px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            border: 1px solid black;
+            padding: 20px;
+            position: absolute;
+            display: none;
+            z-index: 3;
+            border-radius: 10px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 250px;
+        }
+        
+        .container-title {
+          font-size: 15px;
+        }
+
+        .close-button {
+            background-color: white;
+            color: black;
+            border: 1px solid white;
+            padding: 5px;
+            cursor: pointer;
+            border-radius: 50%;
+            position: absolute;
+            top: 3px;
+            right: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .instructions {
+            font-size: 12px;
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .blur-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(3px);
+            z-index: 2;
+            display: none;
+        }
+    </style>
+    <title>Iklan Website</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="blur-background" id="blurBackground"></div>
+        
+        <div class="download-panel" id="downloadPanel">
+            <span class="container-title">Download</span>
+            <br >
+            <br >
+            <button id="clickOnAds" onclick="enableDownloadAndRedirect()">Click on Ads</button>
+            <button id="testbutton" disabled onclick="troll()">Click Here</button>
+            <button id="testbutton" disabled onclick="loadgame()">Play Tic tac Toe</button>
+            <button id="testbutton" disabled onclick="loadweb()">plagiat GAme</button>
+            <button id="testbutton" disabled onclick="loadcar()">Play Car Game</button>
+        </div>
+        
+        <div class="help-panel" id="helpPanel">
+            <div class="close-button" onclick="closeHelp()">&#10006;</div>
+            <p class="instructions">
+                1. Click button "Click on Ads"<br>
+                2. Wait for 15 seconds<br>
+                3. Back to website<br>
+                4. Click a button content
+            </p>
+        </div>
+        
+        <div class="AdvertisementZone">
+            <div class="container-title">Advertisement</div>
+            <br >
+            <br >
+            <script type="text/javascript">
+            	atOptions = {
+            		'key' : '0241c65182d5646373760c2bbd4c910d',
+            		'format' : 'iframe',
+            		'height' : 300,
+            		'width' : 160,
+            		'params' : {}
+            	};
+            	document.write('<scr' + 'ipt type="text/javascript" src="//performtechnique.com/0241c65182d5646373760c2bbd4c910d/invoke.js"></scr' + 'ipt>');
+            </script>
+        </div>
+    </div>
+    <script>
+        function enableDownloadAndRedirect() {
+          window.location.href = "https://doruffleton.com/4/6734198";
+          enableDownload();
+        }
+        function enableDownload() {
+            setTimeout(function() {
+                document.getElementById("testbutton").disabled = false;
+            }, 1000);
+        }
+        
+        function loadgame() {
+            window.location.href = "alvinqid.github.io/game/game.html";
+        }
+
+        function loadweb() {
+            window.location.href = "alvinqid.github.io";
+        }
+
+
+        function loadcar() {
+            window.location.href = "alvinqid.github.io/cargame/car.html";
+        }
+
+        function troll() {
+            window.location.href = "https://youtube.com/shorts/3DSkcmAEjH4?si=azvtirkb7M0ceCzy";
+        }
+        
+        function showHelp() {
+            document.getElementById("blurBackground").style.display = "block";
+            document.getElementById("helpPanel").style.display = "block";
+        }
+      
+        function closeHelp() {
+            document.getElementById("blurBackground").style.display = "none";
+            document.getElementById("helpPanel").style.display = "none";
+        }
+    </script>
+    <script src="scpop.js"></script>
+    
+</body>
+  </html>
+  
