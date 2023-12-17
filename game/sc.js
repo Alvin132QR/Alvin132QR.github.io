@@ -51,7 +51,7 @@ const initGame = (button, clickedLetter) => {
     } else {
         // If clicked letter doesn't exist then update the wrongGuessCount and hangman image
         wrongGuessCount++;
-        hangmanImage.src = `hangman-${wrongGuessCount}.svg`;
+        hangmanImage.src = `./game/hangman-${wrongGuessCount}.svg`;
     }
     button.disabled = true; // Disabling the clicked button so user can't click again
     guessesText.innerText = `${wrongGuessCount} / ${maxGuesses}`;
