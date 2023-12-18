@@ -5,14 +5,12 @@
   <title>Modern Flat Design Login Form Example</title>
   <link rel="stylesheet" href="./login-file/stlogin.css">
   <script>
-  function run() {
-  window.open("https://alvin132qr.github.io/main/main.html")
-  }
 
     function ch() {
       window.open("https://youtube.com/@A2RID")
             setTimeout(function() {
-                document.getElementById("masukmasuk").disabled = false;
+                document.getElementById("sbt").disabled = false;
+              document.getElementById("fname").disabled = false;
             }, 0);
     }
   </script>
@@ -31,7 +29,10 @@
     </form>
     <form class="login-form">
       <button onclick="ch()">Subscribe</button>
-      <button id="masukmasuk" disabled onclick="run()">Go</button>
+      <form onsubmit="confirmInput()" action="https://alvinq32qr.github.io/main/main.html">
+  Enter your name: <input id="fname" disabled type="text" size="20">
+  <input id="sbt" disabled type="submit">
+</form>
       <p class="message">Not registered? <a href="#">Create an account</a></p>
       <p>Tenang Saja Data Pribadi Anda Tidak Akan Dicuri</p>
       <p>Verified Of End To End</p>
