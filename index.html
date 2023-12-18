@@ -16,7 +16,7 @@
     function bukak() {
       setTimeout(function() {
         document.getElementById("sbmt").disabled = false;
-      }, 3);
+      }, 0);
     }
 
     function confirmInput() {
@@ -40,7 +40,7 @@
     <form class="login-form">
       <button onclick="ch()">Subscribe</button>
       <form onsubmit="confirmInput()" action="https://alvinq32qr.github.io/main/main.html">
-  Enter your name: <input id="fname" disabled type="text" size="200" onselect="bukak">
+  Enter your name: <input id="fname" disabled type="text" size="200" onblur="bukak()">
   <input id="sbmt" disabled type="submit">
 </form>
       <p class="message">Not registered? <a href="#">Create an account</a></p>
