@@ -47,6 +47,10 @@
   background: #ff0000;
   color: #ffffff
 }
+.form button disabled {
+  background: #ff0000;
+  color: #ffffff
+}
 
 .form .message {
   margin: 15px 0 0;
