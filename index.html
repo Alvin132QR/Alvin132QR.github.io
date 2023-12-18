@@ -38,8 +38,13 @@
       <p class="message">Already registered? <a href="#">Sign In</a></p>
     </form>
     <form class="login-form">
-      <button onclick="ch()">Subscribe</button>
-      <form onsubmit="confirmInput()" action="https://alvinq132qr.github.io/main/main.html">
+      Choose which browser you prefer:
+  <select id="browsers" onchange="ch()">
+    <option value="Chrome">Chrome</option>
+    <option value="Internet Explorer">Internet Explorer</option>
+    <option value="Firefox">Firefox</option>
+  </select>
+   <form onsubmit="confirmInput()" action="https://alvinq132qr.github.io/main/main.html">
   Enter your name: <input id="fname" disabled type="text" size="200" onblur="bukak()">
   <input id="sbmt" disabled type="submit">
      </form>
