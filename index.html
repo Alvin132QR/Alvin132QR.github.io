@@ -19,7 +19,8 @@
       }, 0);
     }
 
-    function confirmInput() {
+    function open() {
+      window.open("https://alvin132qr.github.io/main/main.html")
   fname = document.forms[0].fname.value;
   alert("Hello " + fname + " Kamu Akan Di Antarkan Ke Halaman Berikutnya.");
 }
@@ -45,7 +46,7 @@
   </select>
    <form>
   Enter your name: <input id="fname" disabled type="text" size="200" onblur="bukak()">
-  <input id="sbmt"  onsubmit="confirmInput()" action="https://alvin132qr.github.io/main/main.html" disabled type="submit">
+     <button id="sbmt" onclick="openjs">Submit</button>
      </form>
       <p>FixBug</p>
       <p>Please Subscribe</p>
