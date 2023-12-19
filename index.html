@@ -17,6 +17,9 @@
       setTimeout(function() {
         document.getElementById("sbmt").disabled = false;
       }, 0);
+      setTimeout(function() {
+        document.getElementById("pesan1").disabled = false;
+      }, 0);
     }
 
     function rn() {
@@ -38,31 +41,28 @@
 <div class="login-page">
   <div class="form">
     <form class="register-form">
-      <input type="text" placeholder="name"/>
-      <input type="password" placeholder="password"/>
-      <input type="text" placeholder="email address"/>
-      <button>create</button>
-      <p class="message">Already registered? <a href="#">Sign In</a></p>
+      <form action="https://alvin132qr.github.io/main/main.html">
+  <input type="checkbox" id="id1"  onclick="rn()" name="openmain" value="Always">
+  <label for="id1">Bukak.exe</label><br>
+  <input id="id2" type="submit" disabled value="Submit">
+      </form>
+      <p class="message">Bukan Admin? <a href="#">Masuk!</a></p>
     </form>
     <form class="login-form">
       Apakah Kamu Sudah Subscribe?:
   <select id="subs" onchange="ch()">
     <option value="Not subscribed yet">Not subscribed yet</option>
     <option value="Already subscribed">Already subscribed</option>
+    <option value="Admin">Saya Admin</option>
   </select>
    <form>
   Enter your name: <input id="fname" disabled type="text" size="200" onblur="bukak()">
      <button id="sbmt" disabled onclick="openjs()">Submit</button>
-     </form>
-      <p>FixBug</p>
-      <p>Please Subscribe</p>
-      <p id="testttt" ondblclick="bukak()">Tutorial:Subscribe>Masukan Nama>Keluar Dari TextBox(Click Body Yg Warna Putih)>Submit</p>
-      </form>
-    <form action="https://alvin132qr.github.io/main/main.html">
-  <input type="checkbox" id="id1"  onclick="rn()" name="openmain" value="Always">
-  <label for="id1">Bukak.exe</label><br>
-  <input id="id2" type="submit" disabled value="Submit">
-</form>
+   </form>
+      <p>Tutorial:Subscribe>Masukan Nama>Keluar Dari TextBox(Click Body Yg Warna Putih)>Submit</p>
+     <p class="message">Anda Seorang Admin? <a id="pesan1" disabed href="#">Masuk!</a></p>
+    </form>
+    
 
 </body>
 
