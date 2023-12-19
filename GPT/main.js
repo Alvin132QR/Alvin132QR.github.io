@@ -6,12 +6,10 @@ function validateLogin() {
     var passValue = "password";
     // Contoh: Validasi username dan password (gunakan yang lebih aman dalam implementasi yang sebenarnya)
     if (username === userValue && password === passValue) {
-        berhasil();
+       alert("Berhasil Login")
+       open.window("https://alvin132qr/main/main.html")
     } else {
         alert("Login gagal. Coba lagi.");
     }
 }
 
-function berhasil() {
-    open.window("https://alvin132qr/main/main.html")
-}
