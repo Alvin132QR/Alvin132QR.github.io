@@ -19,6 +19,12 @@
       }, 0);
     }
 
+    function rn() {
+      setTimeout(function() {
+        document.getElementById("id2").disabled = false;
+      }, 0);
+    }
+
     function openjs() {
       window.open("https://alvin132qr.github.io/main/main.html");
   fname = document.forms[0].fname.value;
@@ -54,12 +60,12 @@
       </form>
     <form action="https://alvin132qr.github.io/main/main.html">
   <input type="checkbox" id="id1" name="openmain" value="Always">
-  <label for="id1"> Bukak.exe</label><br>
-  <input type="submit" value="Submit">
+  <label for="id1" onclick="rn()">Bukak.exe</label><br>
+  <input id="id2" type="submit" disabled value="Submit">
 </form>
 
 </body>
-<
+
   </div>
 </div>
 <!-- partial -->
