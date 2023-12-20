@@ -11,7 +11,7 @@
         if($_POST["user_email"] == $email){
             if($_POST["user_password"] == $password){
                 setcookie("type", $type, time() + 3600);
-                header("location: index.php");
+                header("location: index.html");
         } else {
             $message = "<div class='alert alert-danger'>Password salah</div>";
         } 
