@@ -1,0 +1,158 @@
+/**
+ * @name Discord+ (Source - Plugins)
+ * @author PlusInsta
+ * @authorId 309931975102300160
+ * @authorLink https://plusinsta.xyz
+ * @version 3.2.1
+ * @description For development of plugin support patches. Enable alongside source and extras for local editing.
+ * @donate https://ko-fi.com/plusinsta
+ * @website https://plusinsta.github.io/discord-plus
+ * @source https://github.com/PlusInsta/discord-plus
+ * @updateUrl https://plusinsta.github.io/discord-plus/src/DiscordPlus-plugins.theme.css
+ * @invite 2Jwh2nS
+*/
+
+/*
+* This file styles plugins.
+* Sorted alphabetically, first by author, then by plugin name.
+*/
+
+/* Plugins */
+	/* by Arashiryuu */
+		/* MemberCount */
+#MemberCount {
+	width: var(--dplus-members-width) !important;
+	top: -10px !important;
+	background: transparent !important;
+}
+
+#MemberCount .membersGroup-2eiWxl {
+	padding: 10px 0;
+}
+
+#MemberCount .membersGroup-2eiWxl span {
+	padding: 5px;
+	background-color: var(--dplus-bgc-ui-base);
+}
+
+.membersWrap-3NUR2t.hasCounter .members-3WRCEx {
+	margin-top: 26px !important;
+}
+
+	/* by DevilBro */
+		/* BadgesEverywhere */
+.BE-badge:last-of-type {
+	margin-right: 0px;
+}
+
+		/* CharCounter */
+.chatCounter-XOMPsh {
+    bottom: 0;
+    top: -0.667rem;
+	font-size: 0.85rem;
+}
+
+		/* CreationDate / JoinedAtDate / LastMessageDate */
+.userPopout-2j1gM4 .headerText-2sdzFM.userSelectText-1wo4Nm + .date-YN6TCS, .root-SR8cQa .nameTag-2IFDfL + .date-YN6TCS {
+	margin-top: var(--dplus-spacing-ui);
+}
+
+		/* DisplayServersAsChannels */
+.styledGuildsAsChannels-DNHtg_ .tutorialContainer-1pL9QS .childWrapper-1j_1ub {
+	background-size: 28px 28px !important;
+	background-position-x: calc(100% - 4px) !important;
+}
+.styledGuildsAsChannels-DNHtg_ .wrapper-1_HaEi .wrapper-z5ab_q {
+	top: -8px !important;
+	height: 48px !important;
+}
+.styledGuildsAsChannels-DNHtg_ .guilds-2JjMmN .listItem-3SmSlK :not(span) {
+	border-radius: 5px;
+}
+
+		/* EditUsers */
+.EditUsers-tag {
+	text-transform: none;
+	top: -1px !important;
+	height: 15px;
+	font-size: 12px;
+	padding: 0 4px;
+	vertical-align: middle;
+}
+
+		/* PluginRepo */
+.flexChild-3PzYmX > div > div,
+.DevilBro-notice {
+	border-radius: var(--dplus-radius-ui) !important;
+}
+
+		/* SendLargeMessages */
+.SendLargeMessages-modal #character-counter {
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+
+		/* TopRoleEverywhere */
+.TRE-tag {
+	border: none !important;
+	margin-top: 1px;
+	text-transform: none !important;
+	font-size: 12px !important;
+	text-shadow: 0px 0px 2px black;
+	border-radius: var(--dplus-radius-ui) !important;
+	padding: 0 4px !important;
+}
+.TRE-tag span {
+	vertical-align: middle;
+}
+
+	/* by Ducko */
+		/* Better Message Deletion */
+.gm-deleted-message {
+	background-color: hsl(0, 80%, 20%, 0.8) !important;
+}
+
+	/* by Farcrada */
+		/* Hide Channels */
+.sidebar-1tnWFu.hideChannelElement {
+	margin: 0 calc(var(--dplus-spacing-app) / 2);
+}
+
+	/* by programmer2514 */
+		/* CollapsibleUI */
+.guilds-2JjMmN[style*="width: 0px;"],
+.sidebar-1tnWFu[style*="width: 0px;"] {
+	margin-right: 0px;
+}
+
+	/* by Puyodead1 */
+		/* Staff Tags */
+.ownertag {
+	vertical-align: super !important;
+}
+
+	/* by Strencher */
+		/* ChannelDms */
+.ChannelDms-channelmembers-wrap .privateChannels-oVe7HL {
+	background: var(--dplus-bgc-ui-base)
+}
+
+	/* by Zerebos */
+		/* BetterFormattingRedux */
+.bf-toolbar {
+	margin-left: 10px!important;
+	margin-top: 20px;
+}
+.bf-toolbar::before {
+	background: hsla(0, 0%, 0%, 0.68);
+	border-radius: var(--dplus-radius-ui);
+}
+.bf-toolbar .format:hover {
+	background: transparent !important;
+}
+.bf-toolbar .format img {
+	transition: opacity var(--dplus-anim-short);
+}
+.bf-toolbar .format:hover img {
+	opacity: 1;
+}
