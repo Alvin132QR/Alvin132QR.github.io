@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download File</title>
+</head>
+<body>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nama = $_POST["nama"];
+    $email = $_POST["email"];
+
+    // Lakukan apa yang diperlukan dengan data yang diterima dari formulir
+    echo "Terima kasih, $nama! Data Anda dengan email $email telah diterima.";
+}
+?>
+
+</body>
+</html>
